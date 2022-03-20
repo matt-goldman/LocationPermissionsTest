@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="loc_perm_test.MainPage"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+
+    <ScrollView>
+        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,Auto,*"
+              Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
+
+            <Label 
+                Text="Location test"
+                Grid.Row="0"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="Enter your name, then click the button to get your location"
+                Grid.Row="1"
+                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.Description="Enter your name, then click the button to get your location"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Entry Placeholder="Enter your name"
+                   Grid.Row="2"
+                   HorizontalOptions="Center"
+                   x:Name="UsernameEntry"/>
+
+            <Button 
+                Text="Click me"
+                FontAttributes="Bold"
+                Grid.Row="3"
+                SemanticProperties.Hint="Gets your location"
+                Clicked="OnFinemeClicked"
+                HorizontalOptions="Center" />
+
+            <Label Grid.Row="4"
+                   x:Name="lblLocation"/>
+
+            <Image Grid.Row="5"
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                WidthRequest="250"
+                HeightRequest="310"
+                HorizontalOptions="Center" />
+
+        </Grid>
+    </ScrollView>
+</ContentPage>
